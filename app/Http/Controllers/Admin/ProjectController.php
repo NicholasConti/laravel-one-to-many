@@ -120,6 +120,6 @@ class ProjectController extends Controller
             Storage::delete($project->image);
         }
         $project->delete();
-        return to_route('admin.projects.index')->with('delete', "Project $old_i deleted successfully!");;
+        return to_route('admin.projects.index')->with('delete', "Project $old_i deleted successfully!");
     }
 }

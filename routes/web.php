@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashBoardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TypeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,7 @@ Route::middleware('auth', 'verified')->prefix('admin')->name('admin.')->group(fu
     Route::get('/', [DashBoardController::class, 'index'])->name('dashboard');
 
     Route::resource('projects', ProjectController::class)->parameters(['projects' => 'project:slug']);
+    Route::resource('types', TypeController::class)->parameters(['types' => 'type:slug']);
 
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
