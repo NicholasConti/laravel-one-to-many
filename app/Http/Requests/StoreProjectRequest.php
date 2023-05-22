@@ -28,7 +28,8 @@ class StoreProjectRequest extends FormRequest
             'description' => 'required|string',
             'programming_languages' => 'required|string',
             'start_date' => 'required|date',
-            'image' => 'nullable|image'
+            'image' => 'nullable|image',
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
 }
